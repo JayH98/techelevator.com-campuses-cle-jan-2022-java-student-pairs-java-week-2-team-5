@@ -62,7 +62,7 @@ public class Employee {
 
     String getFullName() { return lastName + ", " + firstName;}
 
-    double raiseSalary(double percent) { return (salary * percent) + salary;}
+    public void raiseSalary(double percent)  {this.salary =(salary * percent) + salary;}
 
 
 

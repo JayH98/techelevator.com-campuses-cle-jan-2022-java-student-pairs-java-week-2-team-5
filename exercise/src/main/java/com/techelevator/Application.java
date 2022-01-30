@@ -1,7 +1,9 @@
 package com.techelevator;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Application {
 
@@ -12,6 +14,7 @@ public class Application {
 
      List<Department> departments = new ArrayList<Department>();
      List<Employee> employees = new ArrayList<Employee>();
+     Map<String, Project> projects = new HashMap<String, Project>();
 
 
 
@@ -64,16 +67,35 @@ public class Application {
         printEmployees();
 
         for(Employee employee : employees) {
-            System.out.println(employee.getFullName() + " " + employee.getSalary() + " " + employee.getDepartment().getName());
+            System.out.println(employee.getFullName() + " (" + employee.getSalary() + ") " + employee.getDepartment().getName());
         }
 
         // create the TEams project
         createTeamsProject();
+
+        Project teams = new Project("TEams", "Project Management Software","10/10/2020", "11/10/2020");
+        teams.setTeamMembers(employees, engineering);
+
+
+        projects.put("TEams", teams);
+
         // create the Marketing Landing Page Project
         createLandingPageProject();
 
+        Project marketingLandingPage = new Project("Marketing Landing Page", "Lead Capture Landing Page for Marketing",
+                "10/10/2020", "10/17/2020");
+
+        marketingLandingPage.setTeamMembers(employees, marketing);
+
+        projects.put("Marketing Landing Page", marketingLandingPage);
+
+
         // print each project name and the total number of employees on the project
         printProjectsReport();
+
+       for(Map.Entry<String, Project> project : projects.entrySet()) {
+            System.out.println(project.getKey() + ":" + project.getValue().getTeamMembers().size());
+        }
     }
 
     /**
