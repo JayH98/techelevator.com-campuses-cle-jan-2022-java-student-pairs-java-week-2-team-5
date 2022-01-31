@@ -11,14 +11,23 @@ public class Employee {
     private String hireDate;
 
     public Employee(long employeeId, String firstName, String lastName,
-                    String email, double salary, Department department, String hireDate) {
-        this.employeeId = employeeId; this. firstName = firstName; this.lastName = lastName;
-        this.email = email; this.department = department; this.hireDate = hireDate;
+                    String email, Department department, String hireDate) {
+        this.employeeId = employeeId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.department = department;
+        this.hireDate = hireDate;
     }
 
-    public Employee() {}
+    public Employee() {
 
-    public long getEmployeeId() {return this.employeeId; }
+    }
+
+
+    public long getEmployeeId() {
+        return this.employeeId;
+    }
 
     public String getFirstName() {
         return this.firstName;
@@ -33,7 +42,7 @@ public class Employee {
     }
 
     public double getSalary() {
-        return salary;
+        return this.salary;
     }
 
     public Department getDepartment() {
@@ -44,35 +53,44 @@ public class Employee {
         return hireDate;
     }
 
-    public void setEmployeeId(long employeeId) { this.employeeId = employeeId; }
+    public String getFullName() {
+        return lastName + ", " + firstName;
+    }
 
-    public void setFirstName(String firstName) { this.firstName = firstName; }
+    public void setEmployeeId(long employeeId) {
+        this.employeeId = employeeId;
+    }
 
-    public void setLastName(String lastName) { this.lastName = lastName; }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-    public void setEmail(String email) { this.email = email; }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-    public void setSalary(double salary) { this.salary = salary; }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    public void setDepartment(Department department) { this.department = department; }
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
 
-    public void setHireDate(String hireDate) { this.hireDate = hireDate; }
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 
-    private static final double SALARY = 60000.00;
+    public void setHireDate(String hireDate) {
+        this.hireDate = hireDate;
+    }
 
-    String getFullName() { return lastName + ", " + firstName;}
+    public void raiseSalary(double percent) {
+        this.salary = this.salary + (this.salary * (percent / 100));
 
-    public void raiseSalary(double percent)  {this.salary =(salary * percent) + salary;}
+    }
 
-
-
-
-
-
-
-
-
-
+    private static final double SALARY = 60000;
 
 }
 
