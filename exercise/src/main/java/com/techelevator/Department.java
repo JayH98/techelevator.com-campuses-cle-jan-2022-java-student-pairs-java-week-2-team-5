@@ -9,21 +9,21 @@ public class Department {
         this.name = name;
     }
 
-   public int getDepartmentId() {
-       return this.departmentId;
-   }
+    public int getDepartmentId() {
+        return this.departmentId;
+    }
 
-   public void setDepartmentId(int departmentId){
-       this.departmentId = departmentId;
-   }
+    public void setDepartmentId(int departmentId){
+        this.departmentId = departmentId;
+    }
 
-   public String getName() {
-       return this.name;
-   }
+    public String getName() {
+        return this.name;
+    }
 
-   public void setName() {
-       this.name = name;
-   }
+    public void setName() {
+        this.name = name;
+    }
 
 
 
